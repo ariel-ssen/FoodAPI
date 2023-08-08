@@ -27,10 +27,11 @@
 
 3. api 문서화 , filter 기능 추가 
     - drf_yasg 라이브러리 사용 
+    - pip install django-filter -> SearchFilter의 search_fields
+        -  텍스트 기반의 검색어를 처리. 부분 일치나 정확한 일치 검색에 유용하기에 사용.
 
 #### 파일 설명 
 - tocsv.py : csv파일을 db에 저장
 - Food_clean.csv : 필요한 컬럼만 가공한 파일 , 즉각 활용
 - djangoProject : main -> product : serve
-
 ###### 웹개발에서 RESTAPI는 클라이언트(front)와 서버(Back)의 통신을 원활하게 하는 역할을 합니다. 
