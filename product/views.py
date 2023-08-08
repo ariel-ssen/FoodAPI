@@ -12,18 +12,10 @@ from rest_framework import filters
 from .models import Product
 from .serializers import ProductSerializer
 
-# 초반 라우팅 나누기전 code
-# class ProductListAPI(APIView):
-#     def get(self, request):
-#         queryset = Product.objects.all()
-#         print(queryset)
-#         serializer = ProductSerializer(queryset, many=True)
-#         return Response(serializer.data)
-    
 # Product 모델과 시리얼라이저 정의
 class ProductViewSet(viewsets.ModelViewSet):
     '''
-    Food 영양정보 CRUD
+    Food 영양정보 [Foodapi]
     
         ---
         # 내용
@@ -56,10 +48,10 @@ class ProductListAPI(generics.ListAPIView):
         ---
         # 내용
             id : 번호
-            food_cd : 식품코드 (검색가능)
-            group_name : 식품군 (검색가능)
-            food_name : 식품이름 (검색가능)
-            research_year : 조사년도 (검색가능)
+            food_cd : 식품코드 
+            group_name : 식품군 
+            food_name : 식품이름 
+            research_year : 조사년도 
             maker_name : 지역/제조사
             serving_size : 1회 제공량
             calorie : 열량(kcal)(1회제공량당)
@@ -72,6 +64,12 @@ class ProductListAPI(generics.ListAPIView):
             saturated_fatty_acids : 포화지방산(g)(1회제공량당)
             trans_fat : 트랜스지방(g)(1회제공량당)
             ref_name : 자료출처
+        
+        # 검색clomns
+            food_cd : 식품코드 
+            group_name : 식품군 
+            food_name : 식품이름 
+            research_year : 조사년도
     '''
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
