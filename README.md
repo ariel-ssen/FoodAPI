@@ -25,6 +25,8 @@
 2. 버전 정보 전달 
     - v1
 
+3. api 문서화 , filter 기능 추가 
+    - drf_yasg 라이브러리 사용 
 
 #### 파일 설명 
 - tocsv.py : csv파일을 db에 저장
