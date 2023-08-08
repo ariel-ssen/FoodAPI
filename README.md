@@ -29,7 +29,10 @@
     - drf_yasg 라이브러리 사용 
     - pip install django-filter -> SearchFilter의 search_fields
         -  텍스트 기반의 검색어를 처리. 부분 일치나 정확한 일치 검색에 유용하기에 사용.
-        
+
+4. Pagination 적용
+    - 1page = 10 list 
+
 #### urls explanation
 - admin/ : 관리자 page
 - api/products/ : db에 저장된 정보를 조회할수 있으며 검색 가능

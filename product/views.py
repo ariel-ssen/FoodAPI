@@ -1,17 +1,15 @@
 from django.shortcuts import render
-from rest_framework.response import Response
-from .models import Product
-from rest_framework.views import APIView
-from .serializers import ProductSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import viewsets
-from rest_framework import generics
-from rest_framework import filters
+from rest_framework import status, viewsets, generics, filters
+from rest_framework.pagination import PageNumberPagination
 from .models import Product
 from .serializers import ProductSerializer
 
+# 페이징처리
+class StudentPagination(PageNumberPagination): 
+    page_size = 10
+    
 # Product 모델과 시리얼라이저 정의
 class ProductViewSet(viewsets.ModelViewSet):
     '''
@@ -39,7 +37,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     '''
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
+    pagination_class = StudentPagination
 # create
 class ProductListAPI(generics.ListAPIView):
     '''
@@ -75,6 +73,7 @@ class ProductListAPI(generics.ListAPIView):
     serializer_class = ProductSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['food_cd', 'food_name', 'research_year', 'maker_name' ]
+    pagination_class = StudentPagination
 
 #  version 
 class V1ExampleView(APIView):
