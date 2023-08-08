@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "product",
     "rest_framework",
     "drf_yasg",
+    "django_filters",
     
 ]
 

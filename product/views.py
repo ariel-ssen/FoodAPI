@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import generics
-from rest_framework.filters import SearchFilter
+from rest_framework import filters
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -56,10 +56,10 @@ class ProductListAPI(generics.ListAPIView):
         ---
         # 내용
             id : 번호
-            food_cd : 식품코드
-            group_name : 식품군
-            food_name : 식품이름
-            research_year : 조사년도
+            food_cd : 식품코드 (검색가능)
+            group_name : 식품군 (검색가능)
+            food_name : 식품이름 (검색가능)
+            research_year : 조사년도 (검색가능)
             maker_name : 지역/제조사
             serving_size : 1회 제공량
             calorie : 열량(kcal)(1회제공량당)
@@ -75,7 +75,7 @@ class ProductListAPI(generics.ListAPIView):
     '''
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    filter_backends = [SearchFilter]
+    filter_backends = [filters.SearchFilter]
     search_fields = ['food_cd', 'food_name', 'research_year', 'maker_name' ]
 
 #  version 
