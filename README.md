@@ -1,3 +1,27 @@
+# 실행 
+## Mac환경 
+1. Brew 설치
+   homebrew site 내에서 복사.
+3. Pyenv 설치
+   brew install pyev
+4. python 설치
+   pyev install 3.12.1
+5. 해당 디렉토리 접근
+   cd *****
+6. 가상환경 접근
+   source myenv/bin/activate
+7. 환경설정
+   pip3 install django
+   pip3 install djangorestframework\n
+   pip3 install drf_yasg
+8. 실행
+   python3 manage.py rumserver
+9. api 접근
+   http://127.0.0.1:8000/api/products/
+
+
+
+
 # API 만들기 
 #### select 조회 기능만 사용
 
