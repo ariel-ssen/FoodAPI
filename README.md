@@ -19,7 +19,7 @@
 9. api 접근
    - http://127.0.0.1:8000/api/products/
 
-![Uploading 스크린샷 2024-01-23 오후 3.08.54.png…]()
+<img width="1026" alt="스크린샷 2024-01-23 오후 3 08 54" src="https://github.com/ariel-ssen/FoodAPI/assets/118493704/61b15867-ec01-450c-b080-41c5f31ee688">
 
 
 
